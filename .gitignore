@@ -130,3 +130,5 @@ dmypy.json
 
 movies.txt
 *.swp
+tags
+.vim/

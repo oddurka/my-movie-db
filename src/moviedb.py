@@ -3,28 +3,32 @@ import json
 
 from dataclasses import dataclass
 from decouple import config
+from icecream import ic
 
 from models.movie import Movie
 
 
 class MovieDB():
     def __init__(self):
-        self._token = config("MOVIEDB_TOKEN")
+        self._token = config("MOVIEDB_BEARER")
 
     def search_for_movie(self, title: str, year: int) -> Movie:
         """
         Searchs for movies based on given title
         """
-        response = requests.get(
-            f"https://api.themoviedb.org/3/search/movie?api_key={self._token}&language=en-US&query={title.replace(' ', '%20') if ' ' in title else title}&page=1&include_adult=false&year={year}"
-        ).json()
+        headers = {
+            "accept": "application/json",
+            "Authorization": f"Bearer {self._token}"
+        }
+        url = f"https://api.themoviedb.org/3/search/movie?language=en-US&query={title.replace(' ', '%20') if ' ' in title else title}&page=1&include_adult=false{'' if year == 0 else f'&year={year}'}"
+        response = requests.get(url, headers=headers).json()
 
         movies = [self._get_details(movie) for movie in response["results"] if movie["title"].lower() == title.lower()]
 
         if len(movies) > 1:
             return self._multiple_choise(movies)
 
-        return movies
+        return self.get_movie_details(movies[0].id)
 
     def _get_details(self, response: list[dict]) -> Movie:
         genres = self.get_genres()
@@ -42,20 +46,25 @@ class MovieDB():
 
     def _multiple_choise(self, movie_list: list) -> Movie:
         """List the choises if there is more than one option"""
-        # TODO: make view for this and make user choose the correct movie
-        # based on the description and poster
-        # TODO: find out if it is possible to show pictue in terminal
+        while(True):
+            print("Possible movies:")
+            for i in range(len(movie_list)):
+                print(f"[{i}] Name: {movie_list[i].title}\nYear: {movie_list[i].year}\nDescription: {movie_list[i].description}\n")
 
-        for movie in movie_list:
-            print(f"Name: {movie.title}\nYear: {movie.year}")
-        pass
+            selected = input("Which movie are you looking for: ")
+            return movie_list[int(selected)]
 
 
     def get_movie_details(self, movie_id: int) -> Movie:
         """
         Returns all the wanted details of given movie_id
         """
-        response = requests.get(f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={self._token}&language=en-US").json()
+        url=f"https://api.themoviedb.org/3/movie/{movie_id}?&language=en-US"
+        headers = {
+            "accept": "application/json",
+            "Authorization": f"Bearer {self._token}"
+        }
+        response = requests.get(url, headers=headers).json()
         movie = Movie(
             id = response["id"],
             title = response["title"],
@@ -76,7 +85,26 @@ class MovieDB():
         Return a dict with all available genres
         Key is the id number of the genre, and the value is the name of the genre
         """
-        response = requests.get(f"https://api.themoviedb.org/3/genre/movie/list?api_key={self._token}&language=en-US").json()
+        url = f"https://api.themoviedb.org/3/genre/movie/list?api_key={self._token}&language=en-US"
+        headers = {
+            "accept": "application/json",
+            "Authorization": f"Bearer {self._token}"
+        }
+        response = requests.get(url, headers=headers).json()
         genres = dict([(genre["id"], genre["name"]) for genre in response["genres"]])
         return genres
+
+
+    def movie_to_json(self, movie: Movie):
+        return {
+            "id": movie.id,
+            "title": movie.title,
+            "description": movie.description,
+            "year": movie.year,
+            "language": movie.language,
+            "vote_average": movie.vote_average,
+            "vote_count": movie.vote_count,
+            "poster_path": movie.poster_path,
+            "genre": movie.genre,
+        }
 
