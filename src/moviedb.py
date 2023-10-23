@@ -12,10 +12,15 @@ class MovieDB():
     def __init__(self):
         self._token = config("MOVIEDB_BEARER")
 
+
     def search_for_movie(self, title: str, year: int) -> Movie:
         """
         Searchs for movies based on given title
         """
+        print(f"Searching for: {title}")
+        if "’" in title:
+            title = title.replace("’", "'")
+
         headers = {
             "accept": "application/json",
             "Authorization": f"Bearer {self._token}"
@@ -28,9 +33,13 @@ class MovieDB():
         if len(movies) > 1:
             return self._multiple_choise(movies)
 
-        return self.get_movie_details(movies[0].id)
+        return movies[0]
+
 
     def _get_details(self, response: list[dict]) -> Movie:
+        """
+        Gets the details and puts them in the Movie model
+        """
         genres = self.get_genres()
         return Movie(
             id = response["id"],
@@ -44,8 +53,11 @@ class MovieDB():
             genre = [genres[g] for g in response["genre_ids"]],
         )
 
+
     def _multiple_choise(self, movie_list: list) -> Movie:
-        """List the choises if there is more than one option"""
+        """
+        List the choises if there is more than one option
+        """
         while(True):
             print("Possible movies:")
             for i in range(len(movie_list)):

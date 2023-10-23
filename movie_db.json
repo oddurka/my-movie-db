@@ -27,5 +27,457 @@
             "Horror",
             "Thriller"
         ]
+    },
+    "723072": {
+        "id": 723072,
+        "title": "Host",
+        "description": "Six friends hire a medium to hold a s\u00e9ance via Zoom during lockdown \u2014 but they get far more than they bargained for as things quickly go wrong. When an evil spirit starts invading their homes, they begin to realize they might not survive the night.",
+        "year": "2020-12-04",
+        "language": "en",
+        "vote_average": 6.508,
+        "vote_count": 786,
+        "poster_path": "/h7dZpJDORYs5c56dydbrLFkEXpE.jpg",
+        "genre": [
+            "Horror",
+            "Thriller",
+            "Mystery"
+        ]
+    },
+    "805": {
+        "id": 805,
+        "title": "Rosemary's Baby",
+        "description": "A young couple, Rosemary and Guy, moves into an infamous New York apartment building, known by frightening legends and mysterious events, with the purpose of starting a family.",
+        "year": "1968-06-12",
+        "language": "en",
+        "vote_average": 7.8,
+        "vote_count": 3561,
+        "poster_path": "/s8pdaHjxNPLXIA1WjSTWm00RJTz.jpg",
+        "genre": [
+            "Drama",
+            "Horror",
+            "Thriller"
+        ]
+    },
+    "10669": {
+        "id": 10669,
+        "title": "Deliverance",
+        "description": "Intent on seeing the Cahulawassee River before it's turned into one huge lake, outdoor fanatic Lewis Medlock takes his friends on a river-rafting trip they'll never forget into the dangerous American back-country.",
+        "year": "1972-08-18",
+        "language": "en",
+        "vote_average": 7.314,
+        "vote_count": 1426,
+        "poster_path": "/2TrAzNJlHyNYYSkQf6asg3rs2Xr.jpg",
+        "genre": [
+            "Drama",
+            "Adventure",
+            "Thriller"
+        ]
+    },
+    "242224": {
+        "id": 242224,
+        "title": "The Babadook",
+        "description": "A single mother, plagued by the violent death of her husband, battles with her son's fear of a monster lurking in the house, but soon discovers a sinister presence all around her.",
+        "year": "2014-05-22",
+        "language": "en",
+        "vote_average": 6.52,
+        "vote_count": 5628,
+        "poster_path": "/lszpCmmPCKHvzn2OBx7bAgXlfhC.jpg",
+        "genre": [
+            "Drama",
+            "Horror"
+        ]
+    },
+    "948": {
+        "id": 948,
+        "title": "Halloween",
+        "description": "Fifteen years after murdering his sister on Halloween Night 1963, Michael Myers escapes from a mental hospital and returns to the small town of Haddonfield, Illinois to kill again.",
+        "year": "1978-10-24",
+        "language": "en",
+        "vote_average": 7.563,
+        "vote_count": 5036,
+        "poster_path": "/wijlZ3HaYMvlDTPqJoTCWKFkCPU.jpg",
+        "genre": [
+            "Horror",
+            "Thriller"
+        ]
+    },
+    "25983": {
+        "id": 25983,
+        "title": "The House of the Devil",
+        "description": "In the 1980s, college student Samantha Hughes takes a strange babysitting job that coincides with a full lunar eclipse. She slowly realizes her clients harbor a terrifying secret.",
+        "year": "2009-10-30",
+        "language": "en",
+        "vote_average": 6.267,
+        "vote_count": 664,
+        "poster_path": "/4abKUbc9IbsndbaY1hacN1iPM0Y.jpg",
+        "genre": [
+            "Horror",
+            "Mystery"
+        ]
+    },
+    "83": {
+        "id": 83,
+        "title": "Open Water",
+        "description": "Two divers are left out at sea without a boat. There\u2019s nothing but water for miles, unless they look at what\u2019s underneath them...",
+        "year": "2003-10-26",
+        "language": "en",
+        "vote_average": 5.501,
+        "vote_count": 985,
+        "poster_path": "/pjLh97W1J8AdcuKWzqqdKHfYmp5.jpg",
+        "genre": [
+            "Drama",
+            "Thriller",
+            "Horror"
+        ]
+    },
+    "1255": {
+        "id": 1255,
+        "title": "The Host",
+        "description": "A teenage girl is captured by a giant mutated squid-like creature that appears from Seoul's Han River after toxic waste was dumped in it, prompting her family into a frantic search for her.",
+        "year": "2006-07-27",
+        "language": "ko",
+        "vote_average": 6.982,
+        "vote_count": 2535,
+        "poster_path": "/dEDLY3KeghKFzks5nTDWdigVikr.jpg",
+        "genre": [
+            "Horror",
+            "Drama",
+            "Science Fiction"
+        ]
+    },
+    "430231": {
+        "id": 430231,
+        "title": "The Endless",
+        "description": "Two brothers return to the cult they fled from years ago to discover that the group's beliefs may be more sane than they once thought.",
+        "year": "2017-11-05",
+        "language": "en",
+        "vote_average": 6.317,
+        "vote_count": 968,
+        "poster_path": "/49sb3kEZplzudQBhJDSt0mNJm4V.jpg",
+        "genre": [
+            "Science Fiction",
+            "Horror",
+            "Thriller"
+        ]
+    },
+    "567609": {
+        "id": 567609,
+        "title": "Ready or Not",
+        "description": "A bride's wedding night takes a sinister turn when her eccentric new in-laws force her to take part in a terrifying game.",
+        "year": "2019-08-21",
+        "language": "en",
+        "vote_average": 7.06,
+        "vote_count": 3942,
+        "poster_path": "/vOl6shtL0wknjaIs6JdKCpcHvg8.jpg",
+        "genre": [
+            "Comedy",
+            "Horror",
+            "Thriller"
+        ]
+    },
+    "493922": {
+        "id": 493922,
+        "title": "Hereditary",
+        "description": "When Ellen, the matriarch of the Graham family, passes away, her daughter's family begins to unravel cryptic and increasingly terrifying secrets about their ancestry.",
+        "year": "2018-06-07",
+        "language": "en",
+        "vote_average": 7.3,
+        "vote_count": 6937,
+        "poster_path": "/p9fmuz2Oj3HtEJEqbIwkFGUhVXD.jpg",
+        "genre": [
+            "Horror",
+            "Mystery",
+            "Thriller"
+        ]
+    },
+    "575774": {
+        "id": 575774,
+        "title": "His House",
+        "description": "After making a harrowing escape from war-torn South Sudan, a young refugee couple struggle to adjust to their new life in a small English town that has an unspeakable evil lurking beneath the surface.",
+        "year": "2020-01-27",
+        "language": "en",
+        "vote_average": 6.446,
+        "vote_count": 974,
+        "poster_path": "/idh2QAy5NwBRN94ScmtWrukvOgJ.jpg",
+        "genre": [
+            "Horror",
+            "Thriller"
+        ]
+    },
+    "7340": {
+        "id": 7340,
+        "title": "Carrie",
+        "description": "Carrie White, a shy, friendless teenage girl who is sheltered by her domineering, religious mother, unleashes her telekinetic powers after being humiliated by her classmates at her senior prom.",
+        "year": "1976-11-03",
+        "language": "en",
+        "vote_average": 7.291,
+        "vote_count": 3449,
+        "poster_path": "/uc3OvgmbnYaS5Y0BOjSmC1EmSz1.jpg",
+        "genre": [
+            "Horror",
+            "Thriller"
+        ]
+    },
+    "527261": {
+        "id": 527261,
+        "title": "The Silence",
+        "description": "With the world under attack by deadly creatures who hunt by sound, a teen and her family seek refuge outside the city and encounter a mysterious cult.",
+        "year": "2019-05-16",
+        "language": "en",
+        "vote_average": 6.007,
+        "vote_count": 1406,
+        "poster_path": "/lTVOquzxw2DPF3MKuYd1ynz9F6H.jpg",
+        "genre": [
+            "Horror",
+            "Drama",
+            "Thriller",
+            "Fantasy"
+        ]
+    },
+    "306947": {
+        "id": 306947,
+        "title": "The Invitation",
+        "description": "Will and his new girlfriend Kira are invited to a dinner with old friends at the house of Will\u2019s ex Eden and her new partner David. Although the evening appears to be relaxed, Will soon gets a creeping suspicion that their charming host David is up to something.",
+        "year": "2015-07-03",
+        "language": "en",
+        "vote_average": 6.474,
+        "vote_count": 2386,
+        "poster_path": "/4gxZW8AHg9kIOh5BgaSrq5gO1KB.jpg",
+        "genre": [
+            "Thriller",
+            "Horror"
+        ]
+    },
+    "2667": {
+        "id": 2667,
+        "title": "The Blair Witch Project",
+        "description": "In October of 1994 three student filmmakers disappeared in the woods near Burkittsville, Maryland, while shooting a documentary. A year later their footage was found.",
+        "year": "1999-07-14",
+        "language": "en",
+        "vote_average": 6.336,
+        "vote_count": 4384,
+        "poster_path": "/9050VGrYjYrEjpOvDZVAngLbg1f.jpg",
+        "genre": [
+            "Horror",
+            "Mystery"
+        ]
+    },
+    "591273": {
+        "id": 591273,
+        "title": "Fear Street: 1994",
+        "description": "After a series of brutal slayings, a teen and her friends take on an evil force that's plagued their notorious town for centuries.",
+        "year": "2021-06-28",
+        "language": "en",
+        "vote_average": 6.717,
+        "vote_count": 2040,
+        "poster_path": "/9J9Wy39ZjrVmfk7yMkulpcI5sy0.jpg",
+        "genre": [
+            "Mystery",
+            "Horror"
+        ]
+    },
+    "591274": {
+        "id": 591274,
+        "title": "Fear Street: 1978",
+        "description": "In 1978, two rival groups at Camp Nightwing must band together to solve a terrifying mystery when horrors from their towns' history come alive.",
+        "year": "2021-07-08",
+        "language": "en",
+        "vote_average": 7.228,
+        "vote_count": 1698,
+        "poster_path": "/5dNTxhoGDTHHGqUTdxcr4H1dqlU.jpg",
+        "genre": [
+            "Mystery",
+            "Horror"
+        ]
+    },
+    "591275": {
+        "id": 591275,
+        "title": "Fear Street: 1666",
+        "description": "In 1666, a colonial town is gripped by a hysterical witch-hunt that has deadly consequences for centuries to come, and it's up to teenagers in 1994 to finally put an end to their town's curse, before it's too late.",
+        "year": "2021-07-14",
+        "language": "en",
+        "vote_average": 7.161,
+        "vote_count": 1515,
+        "poster_path": "/rmEPtz3Ufzol2VWUAZYzOFaBio3.jpg",
+        "genre": [
+            "Mystery",
+            "Horror"
+        ]
+    },
+    "565028": {
+        "id": 565028,
+        "title": "Candyman",
+        "description": "Anthony and his partner move into a loft in the now gentrified Cabrini-Green. After a chance encounter with an old-timer exposes Anthony to the true story behind Candyman, he unknowingly opens a door to a complex past that unravels his own sanity and unleashes a terrifying wave of violence.",
+        "year": "2021-08-25",
+        "language": "en",
+        "vote_average": 6.038,
+        "vote_count": 1393,
+        "poster_path": "/ygyoaQ8bCp4kDcLc6SdP5GvqmDW.jpg",
+        "genre": [
+            "Horror",
+            "Mystery",
+            "Thriller"
+        ]
+    },
+    "458723": {
+        "id": 458723,
+        "title": "Us",
+        "description": "Husband and wife Gabe and Adelaide Wilson take their kids to their beach house expecting to unplug and unwind with friends. But as night descends, their serenity turns to tension and chaos when some shocking visitors arrive uninvited.",
+        "year": "2019-03-14",
+        "language": "en",
+        "vote_average": 6.969,
+        "vote_count": 6816,
+        "poster_path": "/ux2dU1jQ2ACIMShzB3yP93Udpzc.jpg",
+        "genre": [
+            "Horror",
+            "Thriller",
+            "Mystery"
+        ]
+    },
+    "10065": {
+        "id": 10065,
+        "title": "The Amityville Horror",
+        "description": "This hair-raising remake of the 1979 horror hit depicts the ordeal of the Lutz clan, whose new home has a gory past and a legacy of demons. Before long, the family patriarch is plagued by nightmares and his daughter is seeing phantoms.",
+        "year": "2005-04-14",
+        "language": "en",
+        "vote_average": 6.127,
+        "vote_count": 2032,
+        "poster_path": "/4D246dpe7yy2GvHI2IbpeqkUXry.jpg",
+        "genre": [
+            "Horror"
+        ]
+    },
+    "514847": {
+        "id": 514847,
+        "title": "The Hunt",
+        "description": "Twelve strangers wake up in a clearing. They don't know where they are\u2014or how they got there. In the shadow of a dark internet conspiracy theory, ruthless elitists gather at a remote location to hunt humans for sport. But their master plan is about to be derailed when one of the hunted turns the tables on her pursuers.",
+        "year": "2020-03-11",
+        "language": "en",
+        "vote_average": 6.652,
+        "vote_count": 2885,
+        "poster_path": "/wxPhn4ef1EAo5njxwBkAEVrlJJG.jpg",
+        "genre": [
+            "Action",
+            "Thriller",
+            "Horror"
+        ]
+    },
+    "9479": {
+        "id": 9479,
+        "title": "The Nightmare Before Christmas",
+        "description": "Tired of scaring humans every October 31 with the same old bag of tricks, Jack Skellington, the spindly king of Halloween Town, kidnaps Santa Claus and plans to deliver shrunken heads and other ghoulish gifts to children on Christmas morning. But as Christmas approaches, Jack's rag-doll girlfriend, Sally, tries to foil his misguided plans.",
+        "year": "1993-10-09",
+        "language": "en",
+        "vote_average": 7.8,
+        "vote_count": 8578,
+        "poster_path": "/oQffRNjK8e19rF7xVYEN8ew0j7b.jpg",
+        "genre": [
+            "Fantasy",
+            "Animation",
+            "Family"
+        ]
+    },
+    "23202": {
+        "id": 23202,
+        "title": "Trick 'r Treat",
+        "description": "Four interwoven stories that occur on Halloween: an everyday high school principal has a secret life as a serial killer; a college virgin might have just met the one guy for her; a group of teenagers pull a mean prank, and a bitter old recluse receives an uninvited guest.",
+        "year": "2007-12-09",
+        "language": "en",
+        "vote_average": 7.0,
+        "vote_count": 1686,
+        "poster_path": "/w0nmol4g7n6MFfhfphV7GzHHYjB.jpg",
+        "genre": [
+            "Horror",
+            "Comedy"
+        ]
+    },
+    "60935": {
+        "id": 60935,
+        "title": "The Thing",
+        "description": "When paleontologist Kate Lloyd travels to an isolated outpost in Antarctica for the expedition of a lifetime, she joins an international team that unearths a remarkable discovery. Their elation quickly turns to fear as they realize that their experiment has freed a mysterious being from its frozen prison. Paranoia spreads like an epidemic as a creature that can mimic anything it touches will pit human against human as it tries to survive and flourish in this spine-tingling thriller.",
+        "year": "2011-10-12",
+        "language": "en",
+        "vote_average": 6.207,
+        "vote_count": 2675,
+        "poster_path": "/sOZc3U9acAqlItsI7amSGKUdd7k.jpg",
+        "genre": [
+            "Horror",
+            "Science Fiction",
+            "Mystery",
+            "Thriller"
+        ]
+    },
+    "1700": {
+        "id": 1700,
+        "title": "Misery",
+        "description": "Novelist Paul Sheldon crashes his car on a snowy Colorado road. He is found by Annie Wilkes, the \"number one fan\" of Paul's heroine Misery Chastaine. Annie is also dangerously unstable, and Paul finds himself crippled, drugged, and at her mercy.",
+        "year": "1990-11-30",
+        "language": "en",
+        "vote_average": 7.756,
+        "vote_count": 4202,
+        "poster_path": "/klPO5oh1LOxiPpdDXZo1ADgpKcw.jpg",
+        "genre": [
+            "Drama",
+            "Thriller"
+        ]
+    },
+    "1359": {
+        "id": 1359,
+        "title": "American Psycho",
+        "description": "A wealthy New York investment banking executive hides his alternate psychopathic ego from his co-workers and friends as he escalates deeper into his illogical, gratuitous fantasies.",
+        "year": "2000-04-13",
+        "language": "en",
+        "vote_average": 7.402,
+        "vote_count": 9867,
+        "poster_path": "/9uGHEgsiUXjCNq8wdq4r49YL8A1.jpg",
+        "genre": [
+            "Thriller",
+            "Drama",
+            "Crime"
+        ]
+    },
+    "503919": {
+        "id": 503919,
+        "title": "The Lighthouse",
+        "description": "Two lighthouse keepers try to maintain their sanity while living on a remote and mysterious New England island in the 1890s.",
+        "year": "2019-10-18",
+        "language": "en",
+        "vote_average": 7.517,
+        "vote_count": 4377,
+        "poster_path": "/4SC4cyzHWWzDEdszdxHYPWd32YH.jpg",
+        "genre": [
+            "Drama",
+            "Fantasy",
+            "Thriller",
+            "Horror"
+        ]
+    },
+    "157547": {
+        "id": 157547,
+        "title": "Oculus",
+        "description": "A woman tries to exonerate her brother's murder conviction by proving that the crime was committed by a supernatural phenomenon.",
+        "year": "2013-09-08",
+        "language": "en",
+        "vote_average": 6.439,
+        "vote_count": 2727,
+        "poster_path": "/atNwYYkEQcqpZomijPu3ttNygZ1.jpg",
+        "genre": [
+            "Horror"
+        ]
+    },
+    "10439": {
+        "id": 10439,
+        "title": "Hocus Pocus",
+        "description": "After 300 years of slumber, three sister witches are accidentally resurrected in Salem on Halloween night, and it is up to three kids and their newfound feline friend to put an end to the witches' reign of terror once and for all.",
+        "year": "1993-07-16",
+        "language": "en",
+        "vote_average": 7.057,
+        "vote_count": 2741,
+        "poster_path": "/by4D4Q9NlUjFSEUA1yrxq6ksXmk.jpg",
+        "genre": [
+            "Fantasy",
+            "Comedy",
+            "Family"
+        ]
     }
 }
