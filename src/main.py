@@ -2,7 +2,7 @@ from db import Database as db
 from moviedb import MovieDB
 from models.movie import Movie
 from icecream import ic
-
+from ui.main import App
 
 def read_movie_file(txt_file: str) -> list:
     #TODO: make able to read files in given directroy and its subdirectories
@@ -29,4 +29,5 @@ def main():
     movie_menu()
 
 if __name__ == "__main__":
-    main()
+    app = App()
+    app.mainloop()

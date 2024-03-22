@@ -479,5 +479,44 @@
             "Comedy",
             "Family"
         ]
+    },
+    "822182": {
+        "id": 822182,
+        "title": "The Hunt",
+        "description": "The sudden discovery of his son's secret turns Ibrahim's traditional world upside down. Fraught with emotional conflict he takes Ismail on a fateful trip. Inspired by the biblical story of Prophet Abraham, father of all patriarchs, and his son Ismail set in present-day Cyprus, unraveling the conservative facade of the society.",
+        "year": "2020-10-16",
+        "language": "tr",
+        "vote_average": 0.0,
+        "vote_count": 0,
+        "poster_path": "/uhwGHLelXCZ26gfo5EHP1tl9uYb.jpg",
+        "genre": []
+    },
+    "426487": {
+        "id": 426487,
+        "title": "The Lighthouse",
+        "description": "Two lighthouse keepers clash, making their duties difficult even before a freak storms hits and strands them at the lighthouse for months. Based on a true story.",
+        "year": "2016-07-08",
+        "language": "en",
+        "vote_average": 5.125,
+        "vote_count": 24,
+        "poster_path": "/xkBdT6p7242LTfBdGuyrZNZSeOb.jpg",
+        "genre": [
+            "Drama",
+            "History",
+            "Horror"
+        ]
+    },
+    "385938": {
+        "id": 385938,
+        "title": "Oculus",
+        "description": "Mieke is being harassed by an inexplicable phenomenon. She is having nightmares and her children are acting strange. For no apparent reason her mother appears, after a long period without any contact. She tries to warn Mieke for impending doom. Has it something to do with the doll that one of her sons got for his birthday? Mieke makes a discovery, a very dark one. Something that will turn her life upside down.",
+        "year": "2013-01-18",
+        "language": "nl",
+        "vote_average": 6.8,
+        "vote_count": 5,
+        "poster_path": "/As3eTQXFBZZe2Gzf9ZzjFVULIIL.jpg",
+        "genre": [
+            "Horror"
+        ]
     }
 }
