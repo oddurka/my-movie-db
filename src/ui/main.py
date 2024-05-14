@@ -1,6 +1,7 @@
 import tkinter
 import customtkinter as ctk
 from ui.checkbox_frame import GenreCheckBox
+from ui.movie_card import MovieCard
 
 ctk.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
 ctk.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -31,3 +32,7 @@ class App(ctk.CTk):
         # radio buttons
         self.checkbox_frame = GenreCheckBox(self, values=["horror", "comedy", "suspense"], title="Genres")
         self.checkbox_frame.grid(row=0, column=0, padx=10, pady=(10, 0))
+
+        # main frame
+        self.movie_card_frame = MovieCard(self, title="The Dark Knight", year="2008", genre="Action")
+        self.movie_card_frame.grid(row=0, column=1, padx=10, pady=10)
