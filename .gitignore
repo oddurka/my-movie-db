@@ -132,3 +132,5 @@ movies.txt
 *.swp
 tags
 .vim/
+.DS_Store
+

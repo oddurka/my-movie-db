@@ -27,12 +27,12 @@ class App(ctk.CTk):
         self.sidebar_frame.grid_rowconfigure(4, weight=1)
 
         self.logo_label = ctk.CTkLabel(self.sidebar_frame, text="My Movie Db", font=ctk.CTkFont(size=20, weight="bold"))
-        self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10))
+        self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10), sticky="nw")
 
         # radio buttons
         self.checkbox_frame = GenreCheckBox(self, values=["horror", "comedy", "suspense"], title="Genres")
-        self.checkbox_frame.grid(row=0, column=0, padx=10, pady=(10, 0))
+        self.checkbox_frame.grid(row=0, column=0, padx=10, pady=(10, 0), sticky="w")
 
         # main frame
-        self.movie_card_frame = MovieCard(self, title="The Dark Knight", year="2008", genre="Action")
+        self.movie_card_frame = MovieCard(self, title="The Dark Knight", year="2008", genre="Action", image_path="src/posters/fastx.jpeg")
         self.movie_card_frame.grid(row=0, column=1, padx=10, pady=10)
