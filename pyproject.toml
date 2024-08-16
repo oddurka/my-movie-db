@@ -12,6 +12,7 @@ pydantic = "^1.10.2"
 bandit = "^1.7.5"
 tk = "^0.1.0"
 customtkinter = "^5.2.2"
+pillow = "^10.3.0"
 
 [tool.poetry.dev-dependencies]
 icecream = "^2.1.3"
