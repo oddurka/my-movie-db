@@ -1,5 +1,12 @@
+from os import close
 import tkinter
 import customtkinter as ctk
+from icecream import ic
+import requests
+import urllib.request
+from db import Database
+from moviedb import MovieDB
+from ui.movie_frame import MovieFrame
 from ui.checkbox_frame import GenreCheckBox
 from ui.movie_card import MovieCard
 
@@ -10,6 +17,8 @@ class App(ctk.CTk):
     def __init__(self):
         super().__init__()
 
+        self.movie_list = Database.load_db()
+
         self.minsize(800,500)
 
         # configure window
@@ -17,22 +26,39 @@ class App(ctk.CTk):
         self.geometry(f"{1100}x{580}")
 
         # configure grid layout
+        self.grid_columnconfigure(0, weight=0, minsize=140)
         self.grid_columnconfigure(1, weight=1)
-        self.grid_columnconfigure((2, 3), weight=0)
-        self.grid_rowconfigure((0, 1, 2), weight=1)
+        self.grid_rowconfigure(0, weight=1)
+
 
         # sidebar frame
         self.sidebar_frame = ctk.CTkFrame(self, width=140, corner_radius=0)
-        self.sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
-        self.sidebar_frame.grid_rowconfigure(4, weight=1)
+        self.sidebar_frame.grid(row=0, column=0, sticky="nsew")
+        self.sidebar_frame.grid_rowconfigure(99, weight=1)
 
         self.logo_label = ctk.CTkLabel(self.sidebar_frame, text="My Movie Db", font=ctk.CTkFont(size=20, weight="bold"))
         self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10), sticky="nw")
 
-        # radio buttons
-        self.checkbox_frame = GenreCheckBox(self, values=["horror", "comedy", "suspense"], title="Genres")
-        self.checkbox_frame.grid(row=0, column=0, padx=10, pady=(10, 0), sticky="w")
+        self.genre_checkbox()
+        self.movie_cards()
 
+    def genre_checkbox(self):
+        movie_genres = MovieDB().get_genres()
+        # radio buttons
+        self.checkbox_frame = GenreCheckBox(
+            self.sidebar_frame,
+            values=list(movie_genres.values()),
+            title="Genres"
+        )
+        self.checkbox_frame.grid(row=1, column=0, padx=10, pady=(10, 0), sticky="nw")
+
+    def movie_cards(self):
         # main frame
-        self.movie_card_frame = MovieCard(self, title="The Dark Knight", year="2008", genre="Action", image_path="src/posters/fastx.jpeg")
-        self.movie_card_frame.grid(row=0, column=1, padx=10, pady=10)
+        self.movie_card_frame = MovieFrame(self, movies=self.movie_list.values())
+        self.movie_card_frame.grid(row=0, column=1, sticky="nsew")
+        #urllib.request.urlretrieve(f"https://image.tmdb.org/t/p/original{movie['poster_path']}", f"src/posters/{movie['title']}.jpg")
+        #self.movie_card_frame = MovieCard(self, title=movie["title"], year=movie["year"], genre=movie["genre"], image_path=f"src/posters/{movie['title']}.jpg")
+
+            #TODO: use PIL to load images from internet instead of downloading them
+            # make the list scrollable
+            # make cards clickable

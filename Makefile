@@ -9,7 +9,7 @@ export PYTHONPATH
 
 .PHONY: install
 install:
-	poetry install
+	poetry install --no-root
 
 .PHONY: update
 update:

@@ -1,7 +1,7 @@
 import json
 
 class Database:
-    def save_to_db(movie: dict) -> None:
+    def save_to_db(self, movie: dict) -> None:
         """
         Saves dict to a json file
         """

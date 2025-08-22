@@ -1,7 +1,7 @@
 import tkinter
 import customtkinter as ctk
 
-class GenreCheckBox(ctk.CTkFrame):
+class GenreCheckBox(ctk.CTkScrollableFrame):
     def __init__(self, master, values, title):
         super().__init__(master)
         self.grid_columnconfigure(0, weight=1)
