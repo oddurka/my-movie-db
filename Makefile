@@ -25,12 +25,6 @@ lock:
 activate:
 	poetry shell
 
-
-# Activate vitual environment
-.PHONY: activate
-activate:
-	poetry shell
-
 .PHONY: run
 run:
 	python src/main.py
