@@ -37,8 +37,8 @@ class App(ctk.CTk):
         self.logo_label = ctk.CTkLabel(self.sidebar_frame, text="My Movie Db", font=ctk.CTkFont(size=20, weight="bold"))
         self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10), sticky="nw")
 
-        self.genre_checkbox()
         self.movie_cards()
+        self.genre_checkbox()
 
     def genre_checkbox(self):
         movie_genres = MovieDB().get_genres()
@@ -46,7 +46,8 @@ class App(ctk.CTk):
         self.checkbox_frame = GenreCheckBox(
             self.sidebar_frame,
             values=list(movie_genres.values()),
-            title="Genres"
+            title="Genres",
+            on_change=self.movie_card_frame.filter_by_genres
         )
         self.checkbox_frame.grid(row=1, column=0, padx=10, pady=(10, 0), sticky="nw")
 

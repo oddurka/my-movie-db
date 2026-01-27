@@ -14,6 +14,7 @@ class MovieCard(ctk.CTkFrame):
         self.grid_rowconfigure((0, 1, 2), weight=1)
 
         self.image_path = self._load_poster_image(image_path)
+        self._visible = True
 
         self.title = title
         self.year = year

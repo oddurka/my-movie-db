@@ -28,6 +28,7 @@ class MovieFrame(ctk.CTkScrollableFrame):
                 movie["genre"],
                 movie["poster_path"]
             )
+            card.genre = movie["genre"]
             self.movie_cards.append(card)
 
         self.bind("<Configure>", self._on_resize)
@@ -47,15 +48,14 @@ class MovieFrame(ctk.CTkScrollableFrame):
         card_width = self.movie_cards[0].winfo_reqwidth()
         columns = max(1, width // (card_width + CARD_PADX * 2))
 
-        if columns == self.current_columns:
-            return
-
         self.current_columns = columns
 
         for card in self.movie_cards:
             card.grid_forget()
 
-        for i, card in enumerate(self.movie_cards):
+        visible_cards = [c for c in self.movie_cards if c._visible]
+
+        for i, card in enumerate(visible_cards):
             row = i // columns
             col = i % columns
             card.grid(
@@ -70,6 +70,21 @@ class MovieFrame(ctk.CTkScrollableFrame):
         self._parent_canvas.configure(
             scrollregion=self._parent_canvas.bbox("all")
         )
+
+    def filter_by_genres(self, selected_genres: list[str]):
+        selected = set(selected_genres)
+
+        for card in self.movie_cards:
+            if not selected_genres:
+                card._visible = True
+            else:
+                genres = (
+                    card.genre if isinstance(card.genre, (list, tuple))
+                    else [g.strip() for g in card.genre.split(",")]
+                )
+                card._visible = bool(selected.intersection(genres))
+
+        self._regrid()
 
     def get(self) -> list[str]:
         selected = []
