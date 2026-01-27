@@ -1,5 +1,9 @@
+from io import BytesIO
 import tkinter
+import urllib.request
+from PIL import Image
 import customtkinter as ctk
+import requests
 
 from ui.movie_card import MovieCard
 
@@ -22,7 +26,7 @@ class MovieFrame(ctk.CTkScrollableFrame):
                 movie["title"],
                 movie["year"],
                 movie["genre"],
-                f"src/posters/{movie['title']}.jpg"
+                movie["poster_path"]
             )
             self.movie_cards.append(card)
 

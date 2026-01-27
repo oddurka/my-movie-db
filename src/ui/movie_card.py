@@ -1,6 +1,8 @@
+from io import BytesIO
 import tkinter
 import customtkinter as ctk
 from PIL import Image
+import requests
 
 class MovieCard(ctk.CTkFrame):
     def __init__(self, master, title: str, year: str, genre: str, image_path: str):
@@ -11,13 +13,14 @@ class MovieCard(ctk.CTkFrame):
         self.grid_columnconfigure(0, weight=1)
         self.grid_rowconfigure((0, 1, 2), weight=1)
 
+        self.image_path = self._load_poster_image(image_path)
+
         self.title = title
         self.year = year
         self.genre = genre
-        #self.image = ctk.CTkImage(light_image=Image.open(image_path), dark_image=Image.open(image_path), size=(200,300))
         self.image = ctk.CTkImage(
-            light_image=Image.open(image_path),
-            dark_image=Image.open(image_path),
+            light_image=self.image_path,
+            dark_image=self.image_path,
             size=(200,300)
         )
 
@@ -58,6 +61,11 @@ class MovieCard(ctk.CTkFrame):
             pady=(0, 10),
             sticky="ew"
         )
+    def _load_poster_image(self, poster_path: str):
+        url = f"https://image.tmdb.org/t/p/original{poster_path}"
+        response = requests.get(url)
+        return Image.open(BytesIO(response.content))
+
 
     def get(self) -> tuple[str, str, str, Image.Image]:
         return self.title, self.year, self.genre, self.image

@@ -1,4 +1,3 @@
-from os import close
 import tkinter
 import customtkinter as ctk
 from icecream import ic
@@ -8,7 +7,6 @@ from db import Database
 from moviedb import MovieDB
 from ui.movie_frame import MovieFrame
 from ui.checkbox_frame import GenreCheckBox
-from ui.movie_card import MovieCard
 
 ctk.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
 ctk.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -56,9 +54,5 @@ class App(ctk.CTk):
         # main frame
         self.movie_card_frame = MovieFrame(self, movies=self.movie_list.values())
         self.movie_card_frame.grid(row=0, column=1, sticky="nsew")
-        #urllib.request.urlretrieve(f"https://image.tmdb.org/t/p/original{movie['poster_path']}", f"src/posters/{movie['title']}.jpg")
-        #self.movie_card_frame = MovieCard(self, title=movie["title"], year=movie["year"], genre=movie["genre"], image_path=f"src/posters/{movie['title']}.jpg")
 
-            #TODO: use PIL to load images from internet instead of downloading them
-            # make the list scrollable
-            # make cards clickable
+        #TODO: make cards clickable
