@@ -5,6 +5,7 @@ import requests
 import urllib.request
 from db import Database
 from moviedb import MovieDB
+from ui import constants
 from ui.movie_frame import MovieFrame
 from ui.checkbox_frame import GenreCheckBox
 
@@ -17,10 +18,10 @@ class App(ctk.CTk):
 
         self.movie_list = Database.load_db()
 
-        self.minsize(800,500)
+        self.minsize(constants.APP_WIDTH,constants.APP_HEIGHT)
 
         # configure window
-        self.title("My Movie Db")
+        self.title(constants.APP_TITLE)
         self.geometry(f"{1100}x{580}")
 
         # configure grid layout
@@ -30,11 +31,16 @@ class App(ctk.CTk):
 
 
         # sidebar frame
-        self.sidebar_frame = ctk.CTkFrame(self, width=140, corner_radius=0)
+        self.sidebar_frame = ctk.CTkFrame(self, width=200, corner_radius=0)
         self.sidebar_frame.grid(row=0, column=0, sticky="nsew")
-        self.sidebar_frame.grid_rowconfigure(99, weight=1)
+        self.sidebar_frame.grid_columnconfigure(0, weight=1)
+        self.sidebar_frame.grid_rowconfigure((0,1), weight=1)
 
-        self.logo_label = ctk.CTkLabel(self.sidebar_frame, text="My Movie Db", font=ctk.CTkFont(size=20, weight="bold"))
+        self.logo_label = ctk.CTkLabel(
+            self.sidebar_frame,
+            text=constants.APP_TITLE,
+            font=ctk.CTkFont(size=20, weight="bold")
+        )
         self.logo_label.grid(row=0, column=0, padx=20, pady=(20, 10), sticky="nw")
 
         self.movie_cards()
@@ -42,14 +48,14 @@ class App(ctk.CTk):
 
     def genre_checkbox(self):
         movie_genres = MovieDB().get_genres()
-        # radio buttons
+        # checkbox buttons
         self.checkbox_frame = GenreCheckBox(
             self.sidebar_frame,
             values=list(movie_genres.values()),
-            title="Genres",
+            title=constants.GENRES,
             on_change=self.movie_card_frame.filter_by_genres
         )
-        self.checkbox_frame.grid(row=1, column=0, padx=10, pady=(10, 0), sticky="nw")
+        self.checkbox_frame.grid(row=0, column=0, padx=10, pady=(70, 0), sticky="nsew")
 
     def movie_cards(self):
         # main frame
