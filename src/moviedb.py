@@ -13,7 +13,7 @@ class MovieDB():
         self._token = config("MOVIEDB_BEARER")
 
 
-    def search_for_movie(self, title: str, year: int) -> Movie:
+    def search_for_movie(self, title: str, year: int = 0) -> Movie:
         """
         Searchs for movies based on given title
         """
@@ -25,14 +25,26 @@ class MovieDB():
             "accept": "application/json",
             "Authorization": f"Bearer {self._token}"
         }
-        url = f"https://api.themoviedb.org/3/search/movie?language=en-US&query={title.replace(' ', '%20') if ' ' in title else title}&page=1&include_adult=false{'' if year == 0 else f'&year={year}'}"
-        response = requests.get(url, headers=headers).json()
+        params = {
+            "language": "en-US",
+            "query": title,
+            "include_adult": False,
+            "page": 1
+        }
+        if year:
+            params["year"] = year
+
+        url = "https://api.themoviedb.org/3/search/movie"
+        response = requests.get(url, headers=headers, params=params).json()
 
         movies = [self._get_details(movie) for movie in response["results"] if movie["title"].lower() == title.lower()]
 
         if len(movies) > 1:
             return self._multiple_choise(movies)
+        if not movies:
+            raise ValueError(f"No movie found for title: '{title}'")
 
+        ic(movies)
         return movies[0]
 
 

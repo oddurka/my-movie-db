@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import BaseModel
 
 
@@ -9,5 +10,5 @@ class Movie(BaseModel):
     language: str
     vote_average: float
     vote_count: int
-    poster_path: str
+    poster_path: Optional[str]
     genre: list[str]

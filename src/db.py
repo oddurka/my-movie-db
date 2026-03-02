@@ -1,10 +1,12 @@
 import json
+from pathlib import Path
 
 class Database:
     def save_to_db(self, movie: dict) -> None:
         """
         Saves dict to a json file
         """
+
         with open("movie_db.json", "r+") as db:
             db_movies = json.load(db)
             if str(movie["id"]) not in db_movies.keys():
@@ -18,5 +20,9 @@ class Database:
         """
         Load json file
         """
-        with open("movie_db.json") as db:
+        path = Path("movie_db.json")
+        if not path.exists():
+            return {}
+
+        with open(path) as db:
             return json.load(db)
