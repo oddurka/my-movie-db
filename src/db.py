@@ -1,4 +1,5 @@
 import json
+import logging
 from pathlib import Path
 
 class Database:
@@ -7,6 +8,7 @@ class Database:
         Saves dict to a json file
         """
 
+        logging.info("Saving to database")
         with open("movie_db.json", "r+") as db:
             db_movies = json.load(db)
             if str(movie["id"]) not in db_movies.keys():
@@ -20,6 +22,7 @@ class Database:
         """
         Load json file
         """
+        logging.info("Loading database")
         path = Path("movie_db.json")
         if not path.exists():
             return {}
