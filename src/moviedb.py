@@ -1,3 +1,4 @@
+import re
 import requests
 import json
 
@@ -7,6 +8,8 @@ from icecream import ic
 
 from models.movie import Movie
 import logging
+
+from exceptions import MovieNotFoundError
 
 
 class MovieDB():
@@ -47,37 +50,21 @@ class MovieDB():
         results = first_response["results"]
         logging.debug(f"Page 1 returned {len(results)} result(s), {total_pages} total page(s)")
 
-        movies = [m for m in results if m["title"].lower() == title.lower()]
-
-        # Checks if movie was found in the first page
-        if not movies and total_pages > 1:
-            # Look for movie in all the pages
-            logging.debug(f"No exact match on page 1, searching remaining {total_pages - 1} page(s)")
-            for page in range(2, total_pages + 1):
-                params["page"] = page
-                try:
-                    response = requests.get(
-                        "https://api.themoviedb.org/3/search/movie",
-                        headers=headers,
-                        params=params
-                    ).json()
-                except Exception as e:
-                    logging.error(f"API request failed on page {page} for '{title}': {e}", exc_info=True)
-                results.extend(response["results"])
-                movies = [m for m in results if m["title"].lower() == title.lower()]
-                # When movie is found break the loop
-                if movies:
-                    logging.debug(f"Exact match found on page {page}")
-                    break
-
         movies = [self._get_details(movie) for movie in results if movie["title"].lower() == title.lower()]
 
-        if not movies:
-            logging.warning(f"No exact title match found for: '{title}'")
-            raise ValueError(f"No movie found for title: '{title}'")
-        if len(movies) > 1:
-            logging.info(f"{len(movies)} matches found for {title}, prompting user to choose")
-            return self._multiple_choise(movies)
+        try:
+            if not movies:
+                logging.warning(f"No exact title match found for: '{title}'")
+                movies = [self._get_details(movie) for movie in results]
+                return self._multiple_choice(movies)
+            if len(movies) > 1:
+                logging.info(f"{len(movies)} matches found for {title}, prompting user to choose")
+                return self._multiple_choice(movies)
+        except MovieNotFoundError as e:
+            logging.error(f"Movie not found for: '{title}': {e}")
+        except Exception as e:
+            logging.error(f"No movie found for: '{title}': {e}", exc_info=True)
+            raise
 
         logging.info(f"Single match found: '{movies[0].title}' ({movies[0].year})")
         return movies[0]
@@ -105,18 +92,21 @@ class MovieDB():
             logging.error(f"Missing expected field in API response for '{response.get('title', '?')}': {e}")
 
 
-    def _multiple_choise(self, movie_list: list) -> Movie:
+    def _multiple_choice(self, movie_list: list) -> Movie:
         """
         List the choises if there is more than one option
         """
         logging.info(f"Prompting user to choose between {len(movie_list)} movies")
         while(True):
-            print("Possible movies:")
+            print("\nPossible movies:")
             for i in range(len(movie_list)):
                 print(f"[{i}] Name: {movie_list[i].title}\nYear: {movie_list[i].year}\nDescription: {movie_list[i].description}\n")
             selected = input("Which movie are you looking for: ")
             try:
                 choice = int(selected)
+                if choice == len(movie_list):
+                    logging.info(f"User skipped '{movie_list[0].title}'")
+                    raise MovieNotFoundError(f"User skipped: '{movie_list[0]}'")
                 if 0 <= choice < len(movie_list):
                     logging.info(f"User selected: '{movie_list[choice].title}' ({movie_list[choice].year})")
                     return movie_list[choice]
@@ -195,4 +185,3 @@ class MovieDB():
             "poster_path": movie.poster_path,
             "genre": movie.genre,
         }
-
