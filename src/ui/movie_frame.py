@@ -1,4 +1,5 @@
 from io import BytesIO
+import logging
 import tkinter
 import urllib.request
 from PIL import Image
@@ -21,6 +22,7 @@ class MovieFrame(ctk.CTkScrollableFrame):
         self.current_columns = 0
 
         for movie in self.movies:
+            print(f"Loading movie '{movie['title']}'")
             card = MovieCard(
                 self,
                 movie["title"],

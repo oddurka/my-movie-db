@@ -9,7 +9,7 @@ from ui import constants
 from ui.movie_frame import MovieFrame
 from ui.checkbox_frame import GenreCheckBox
 
-ctk.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
+ctk.set_appearance_mode("Dark")  # Modes: "System" (standard), "Dark", "Light"
 ctk.set_default_color_theme("blue")  # Themes: "blue" (standard), "green", "dark-blue"
 
 class App(ctk.CTk):

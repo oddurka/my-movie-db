@@ -7,3 +7,4 @@ GENRES = "Genres"
 # MovieCard
 HIGHLIGHT_COLOR = "red"#"gray25"
 REGULAR_COLOR = "transparent"#"gray20"
+DEFAULT_POSTER = "src/posters/fastx.jpeg"

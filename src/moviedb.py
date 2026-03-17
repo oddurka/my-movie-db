@@ -10,6 +10,7 @@ from models.movie import Movie
 import logging
 
 from exceptions import MovieNotFoundError
+from constants import URL
 
 
 class MovieDB():
@@ -38,7 +39,7 @@ class MovieDB():
         if year:
             params["year"] = year
 
-        url = "https://api.themoviedb.org/3/search/movie"
+        url = f"{URL}/search/movie"
 
         try:
             first_response = requests.get(url, headers=headers, params=params).json()
@@ -120,7 +121,7 @@ class MovieDB():
         Returns all the wanted details of given movie_id
         """
         logging.info(f"Fetching details for movie id={movie_id}")
-        url=f"https://api.themoviedb.org/3/movie/{movie_id}?&language=en-US"
+        url=f"{URL}/movie/{movie_id}?&language=en-US"
         headers = {
             "accept": "application/json",
             "Authorization": f"Bearer {self._token}"
@@ -157,7 +158,7 @@ class MovieDB():
         Key is the id number of the genre, and the value is the name of the genre
         """
         logging.debug("Fetching genre list from API")
-        url = f"https://api.themoviedb.org/3/genre/movie/list?api_key={self._token}&language=en-US"
+        url = f"{URL}/genre/movie/list?api_key={self._token}&language=en-US"
         headers = {
             "accept": "application/json",
             "Authorization": f"Bearer {self._token}"

@@ -2,6 +2,8 @@ import json
 import logging
 from pathlib import Path
 
+from constants import DB_FILE_PATH
+
 class Database:
     DB_PATH = Path("movie_db.json")
 
@@ -22,7 +24,7 @@ class Database:
         self._ensure_db_exists()
         logging.info(f"Saving to '{movie['title']}' (id={movie['id']}) to database")
         try:
-            with open("movie_db.json", "r+") as db:
+            with open(DB_FILE_PATH, "r+") as db:
                 db_movies = json.load(db)
                 if str(movie["id"]) in db_movies:
                     logging.debug(f"Movie id={movie['id']} already in database, skipping")
@@ -43,7 +45,7 @@ class Database:
         Load json file
         """
         logging.info("Loading database")
-        path = Path("movie_db.json")
+        path = Path(DB_FILE_PATH)
         if not path.exists():
             logging.warning("Database file not found, returning empty dict")
             return {}

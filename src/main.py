@@ -1,12 +1,11 @@
 import logging
 import re
-from sys import exception
 from db import Database as db
 from moviedb import MovieDB
-from models.movie import Movie
 from pathlib import Path
 from icecream import ic
 from exceptions import MovieNotFoundError
+from constants import DIRECTORY_PATH
 from ui.main import App
 
 def read_movie_file(txt_file: str) -> list:
@@ -86,7 +85,7 @@ def get_new_movies(directroy_path: str) -> list[str]:
 def movie_menu():
     mdb = MovieDB()
     database = db()
-    local_movies = get_new_movies("/mnt/c/Users/TheIc/Videos")
+    local_movies = get_new_movies(DIRECTORY_PATH)
     for lm in local_movies:
         try:
             movie = mdb.search_for_movie(lm)
@@ -99,7 +98,7 @@ def movie_menu():
 
 
 def main():
-    logging.basicConfig(level=logging.DEBUG)
+    #logging.basicConfig(level=logging.DEBUG)
     movie_menu()
 
 

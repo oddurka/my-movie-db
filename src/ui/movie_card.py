@@ -1,7 +1,8 @@
 from io import BytesIO
-import tkinter
+import logging
+import tkinter as tk
 import customtkinter as ctk
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
 import requests
 
 from ui import constants
@@ -17,8 +18,6 @@ class MovieCard(ctk.CTkFrame):
 
         self._visible = True
         self._hovered = False
-
-        import tkinter as tk
 
         self.title = title
         self.year = year
@@ -88,6 +87,7 @@ class MovieCard(ctk.CTkFrame):
             widget = widget.master
         return False
 
+
     def _on_motion(self, event=None):
         if not self._hovered:
             self._hovered = True
@@ -107,9 +107,14 @@ class MovieCard(ctk.CTkFrame):
 
 
     def _load_poster_image(self, poster_path: str):
-        url = f"https://image.tmdb.org/t/p/original{poster_path}"
-        response = requests.get(url)
-        return Image.open(BytesIO(response.content))
+        logging.info(f"loading poster for '{self.title}'")
+        try:
+            url = f"https://image.tmdb.org/t/p/original{poster_path}"
+            response = requests.get(url)
+            return Image.open(BytesIO(response.content))
+        except UnidentifiedImageError:
+            logging.warning(f"Could not identify the poster for '{self.title}', returning default poster")
+            return Image.open(constants.DEFAULT_POSTER)
 
 
     def get(self) -> tuple[str, str, str, Image.Image]:
